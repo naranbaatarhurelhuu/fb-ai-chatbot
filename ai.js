@@ -2,6 +2,8 @@
 import OpenAI from "openai";
 import dotenv from "dotenv";
 dotenv.config();
+console.log("OPENAI_API_KEY present?", !!process.env.OPENAI_API_KEY, "length:", (process.env.OPENAI_API_KEY || "").length);
+
 
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
