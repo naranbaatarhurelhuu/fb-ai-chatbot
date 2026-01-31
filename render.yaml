@@ -1,1 +1,8 @@
-git add render.yaml git commit -m "Fix render.yaml issues" git push origin main
+services:
+  - type: web
+    name: fb-ai-chatbot
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    autoDeploy: true
