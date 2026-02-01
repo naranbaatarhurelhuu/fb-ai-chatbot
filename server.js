@@ -282,17 +282,31 @@ function handleText(sender, textRaw) {
     return;
   }
 
+  // ✅ Ямар ч үед "сайн уу / menu / start" гэх мэт бичвэл
+  const quick = lower.replace(/\s+/g, "");
+  if (
+    ["сайнуу", "sainuu", "hi", "hello", "hey", "assalam", "сайнбайнауу", "start", "эхлэх", "menu", "цэс", "?"].includes(quick)
+  ) {
+    sessions.delete(sender); // өмнөх явцыг цэвэрлэнэ
+    sendIntro(sender);
+    return;
+  }
+
   const s = sessions.get(sender);
 
-  // session байхгүй бол intro
-  if (!s) return sendIntro(sender);
+  // ✅ Хуучин хүн / session байхгүй бол: юу ч бичсэн intro гаргана
+  if (!s) {
+    sendIntro(sender);
+    return;
+  }
 
   // phone
   if (s.step === "ask_phone") {
     s.phone = text;
     s.step = "ask_address";
     sessions.set(sender, s);
-    return sendText(sender, "📦 Хүргүүлэх хаягаа (дүүрэг/хороо/байр, дэлгэрэнгүй) илгээгээрэй.");
+    sendText(sender, "📦 Хүргүүлэх хаягаа (дүүрэг/хороо/байр, дэлгэрэнгүй) илгээгээрэй.");
+    return;
   }
 
   // address -> confirm
@@ -303,7 +317,8 @@ function handleText(sender, textRaw) {
     if (!p) {
       sessions.delete(sender);
       sendText(sender, "Загвар олдсонгүй. Дахин эхэлье.");
-      return sendIntro(sender);
+      sendIntro(sender);
+      return;
     }
 
     const summary =
@@ -319,14 +334,15 @@ function handleText(sender, textRaw) {
     s.step = "confirm";
     sessions.set(sender, s);
 
-    return sendButtons(sender, summary, [
+    sendButtons(sender, summary, [
       { title: "✅ Баталгаажуулах", payload: "CONFIRM_ORDER" },
       { title: "❌ Цуцлах", payload: "CANCEL_ORDER" },
     ]);
+    return;
   }
 
   // default
-  return sendIntro(sender);
+  sendIntro(sender);
 }
 
 // =====================
