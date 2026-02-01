@@ -371,6 +371,13 @@ function sendImage(sender, imageUrl) {
 }
 
 function sendButtons(sender, text, buttons) {
+  // ✅ Автоматаар FB-д хэрэгтэй хэлбэр рүү хувиргана
+  const fbButtons = (buttons || []).slice(0, 3).map((b) => ({
+    type: b.type || "postback",
+    title: b.title,
+    payload: b.payload,
+  }));
+
   request(
     {
       uri: "https://graph.facebook.com/v19.0/me/messages",
@@ -384,7 +391,7 @@ function sendButtons(sender, text, buttons) {
             payload: {
               template_type: "button",
               text,
-              buttons: buttons.slice(0, 3), // FB limit
+              buttons: fbButtons,
             },
           },
         },
