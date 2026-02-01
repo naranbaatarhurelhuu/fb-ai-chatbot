@@ -73,7 +73,8 @@ colors: ["#1. Цэнхэр", "#2. Усан цэнхэр", "#3. Номин ног
 "#14. Оранж": "https://scontent.fuln11-1.fna.fbcdn.net/v/t39.30808-6/625898826_889681693657570_4237677448121101363_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=f727a1&_nc_ohc=fePxcqneBYkQ7kNvwGhTjdg&_nc_oc=AdkMkvFfhqqXwj0hXPx_vPCpkecKyKDbadnhXBy8LJiJ-lqRPeJSeJM8COYU83PEktI&_nc_zt=23&_nc_ht=scontent.fuln11-1.fna&_nc_gid=VCHpLN1RIdm2OzBAGv_P_g&oh=00_Afuz_TDNY6b2lMj01gYSGyvrBrdNFBGeU9HuIgJ4SLfOAw&oe=698530ED",
 "#15. Carrot": "https://scontent.fuln11-1.fna.fbcdn.net/v/t39.30808-6/623794069_889681690324237_3773325388970943610_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=f727a1&_nc_ohc=K94FzyjZCI0Q7kNvwE4DIUG&_nc_oc=Adk3xVhmIa4xeoLkKHUjLfZ57rTfHkug9zDoWKUpucw_jRvedIOoWUtGtfdKmd6HcvU&_nc_zt=23&_nc_ht=scontent.fuln11-1.fna&_nc_gid=Bbpl8F1Xw_tv3xGS4b-dNg&oh=00_Aftz878jAqb9L_UyREeFRJverOdsvkYmD5X4FAP5Yn4GHw&oe=69850420",
 
-  },
+  }
+},
   {
     id: "LONG",
     name: "Long",
@@ -99,8 +100,8 @@ colors: ["#1. Цэнхэр", "#2. Усан цэнхэр", "#3. Номин ног
 "#14. Оранж": "https://scontent.fuln11-1.fna.fbcdn.net/v/t39.30808-6/625898826_889681693657570_4237677448121101363_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=f727a1&_nc_ohc=fePxcqneBYkQ7kNvwGhTjdg&_nc_oc=AdkMkvFfhqqXwj0hXPx_vPCpkecKyKDbadnhXBy8LJiJ-lqRPeJSeJM8COYU83PEktI&_nc_zt=23&_nc_ht=scontent.fuln11-1.fna&_nc_gid=VCHpLN1RIdm2OzBAGv_P_g&oh=00_Afuz_TDNY6b2lMj01gYSGyvrBrdNFBGeU9HuIgJ4SLfOAw&oe=698530ED",
 "#15. Carrot": "https://scontent.fuln11-1.fna.fbcdn.net/v/t39.30808-6/623794069_889681690324237_3773325388970943610_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=f727a1&_nc_ohc=K94FzyjZCI0Q7kNvwE4DIUG&_nc_oc=Adk3xVhmIa4xeoLkKHUjLfZ57rTfHkug9zDoWKUpucw_jRvedIOoWUtGtfdKmd6HcvU&_nc_zt=23&_nc_ht=scontent.fuln11-1.fna&_nc_gid=Bbpl8F1Xw_tv3xGS4b-dNg&oh=00_Aftz878jAqb9L_UyREeFRJverOdsvkYmD5X4FAP5Yn4GHw&oe=69850420",
 
-
-  },
+  }
+},
   {
     id: "SOFA",
     name: "Sofa",
@@ -126,8 +127,8 @@ colors: ["#1. Цэнхэр", "#2. Усан цэнхэр", "#3. Номин ног
 "#14. Оранж": "https://scontent.fuln11-1.fna.fbcdn.net/v/t39.30808-6/625898826_889681693657570_4237677448121101363_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=f727a1&_nc_ohc=fePxcqneBYkQ7kNvwGhTjdg&_nc_oc=AdkMkvFfhqqXwj0hXPx_vPCpkecKyKDbadnhXBy8LJiJ-lqRPeJSeJM8COYU83PEktI&_nc_zt=23&_nc_ht=scontent.fuln11-1.fna&_nc_gid=VCHpLN1RIdm2OzBAGv_P_g&oh=00_Afuz_TDNY6b2lMj01gYSGyvrBrdNFBGeU9HuIgJ4SLfOAw&oe=698530ED",
 "#15. Carrot": "https://scontent.fuln11-1.fna.fbcdn.net/v/t39.30808-6/623794069_889681690324237_3773325388970943610_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=f727a1&_nc_ohc=K94FzyjZCI0Q7kNvwE4DIUG&_nc_oc=Adk3xVhmIa4xeoLkKHUjLfZ57rTfHkug9zDoWKUpucw_jRvedIOoWUtGtfdKmd6HcvU&_nc_zt=23&_nc_ht=scontent.fuln11-1.fna&_nc_gid=Bbpl8F1Xw_tv3xGS4b-dNg&oh=00_Aftz878jAqb9L_UyREeFRJverOdsvkYmD5X4FAP5Yn4GHw&oe=69850420",
 
-
-  },
+  }
+},
   {
     id: "ROUND",
     name: "Round",
@@ -153,8 +154,8 @@ colors: ["#1. Цэнхэр", "#2. Усан цэнхэр", "#3. Номин ног
 "#14. Оранж": "https://scontent.fuln11-1.fna.fbcdn.net/v/t39.30808-6/625898826_889681693657570_4237677448121101363_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=f727a1&_nc_ohc=fePxcqneBYkQ7kNvwGhTjdg&_nc_oc=AdkMkvFfhqqXwj0hXPx_vPCpkecKyKDbadnhXBy8LJiJ-lqRPeJSeJM8COYU83PEktI&_nc_zt=23&_nc_ht=scontent.fuln11-1.fna&_nc_gid=VCHpLN1RIdm2OzBAGv_P_g&oh=00_Afuz_TDNY6b2lMj01gYSGyvrBrdNFBGeU9HuIgJ4SLfOAw&oe=698530ED",
 "#15. Carrot": "https://scontent.fuln11-1.fna.fbcdn.net/v/t39.30808-6/623794069_889681690324237_3773325388970943610_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=f727a1&_nc_ohc=K94FzyjZCI0Q7kNvwE4DIUG&_nc_oc=Adk3xVhmIa4xeoLkKHUjLfZ57rTfHkug9zDoWKUpucw_jRvedIOoWUtGtfdKmd6HcvU&_nc_zt=23&_nc_ht=scontent.fuln11-1.fna&_nc_gid=Bbpl8F1Xw_tv3xGS4b-dNg&oh=00_Aftz878jAqb9L_UyREeFRJverOdsvkYmD5X4FAP5Yn4GHw&oe=69850420",
 
-
-  },
+  }
+},
 ];
 
 // =====================
