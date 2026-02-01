@@ -156,11 +156,17 @@ app.post("/webhook", (req, res) => {
 // Intro (2 товч)
 // =====================
 function sendIntro(sender) {
-  sendButtons(sender, "👋 Сайн байна уу!\nДоорх сонголтоос сонгоно уу 👇", [
-    { title: "🧵 Дүүргэлтийн материал", payload: "SHOW_MATERIAL" },
-    { title: "🛍 Загварын сонголт", payload: "SHOW_TEMPLATES" },
-  ]);
+  getUserProfile(sender, (err, profile) => {
+    const first = (profile?.first_name || "").trim();
+    const greet = first ? `👋 Сайн байна уу, ${first}!` : "👋 Сайн байна уу!";
+
+    sendButtons(sender, `${greet}\nДоорх сонголтоос сонгоно уу 👇`, [
+      { title: "🧵 Дүүргэлтийн материал", payload: "SHOW_MATERIAL" },
+      { title: "🛍 Загварын сонголт", payload: "SHOW_TEMPLATES" },
+    ]);
+  });
 }
+
 
 // =====================
 // Material
@@ -181,6 +187,26 @@ function sendTemplates(sender) {
     buttons: [{ type: "postback", title: "✅ Сонгох", payload: `PICK_${p.id}` }],
   }));
 
+function getUserProfile(sender, cb) {
+  request(
+    {
+      uri: `https://graph.facebook.com/v19.0/${sender}`,
+      qs: {
+        access_token: process.env.PAGE_TOKEN,
+        fields: "first_name",
+      },
+      method: "GET",
+      json: true,
+    },
+    (err, resp, body) => {
+      if (err) return cb(err);
+      if (body?.error) return cb(body.error);
+      cb(null, body);
+    }
+  );
+}
+
+  
   fbSend(sender, {
     attachment: {
       type: "template",
