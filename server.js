@@ -417,8 +417,7 @@ function handleText(sender, textRaw) {
       `• Өнгө: ${s.color}\n` +
       `• Үнэ: ${formatMNT(p.price)}\n\n` +
       `☎️ Утас: ${s.phone}\n` +
-      `📦 Хаяг: ${s.address}\n\n` +
-      "Зөв бол Баталгаажуулах дээр дарна уу.";
+      `📦 Хаяг: ${s.address}`;
 
     s.finalOrder = summary;
     s.step = "confirm";
