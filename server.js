@@ -16,6 +16,11 @@ const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 const MATERIAL_IMAGE =
   "https://scontent.fuln11-1.fna.fbcdn.net/v/t39.30808-6/625969441_889472167011856_3806361251418227227_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=xS4bInUXY1wQ7kNvwFgYVhP&_nc_oc=AdmpuEdfnjB5Camq3k_7m-KkzzB1rxkFn6lGo-TNp3yT2V2Lys91vKUzLZ6McvXmVNk&_nc_zt=23&_nc_ht=scontent.fuln11-1.fna&_nc_gid=kIX5tbmjm8trIC_7ur4qgg&oh=00_Afuuo6MZjLZ-McwdY0YhkcaHgjRingrIcgtWCa_b6SWA5g&oe=6984B11D";
 
+const COLOR_BANNER =
+  "https://scontent.fuln11-1.fna.fbcdn.net/v/t39.30808-6/625980601_889475330344873_1786653186884716607_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=f727a1&_nc_ohc=jig5QG7vh24Q7kNvwFgZOO9&_nc_oc=AdnXqcTPTZIJvbRWd7YyrRwP-IdM-kxW8jM5VNtYF4_lIH5DNcCJivPOJvvwRCT6Gog&_nc_zt=23&_nc_ht=scontent.fuln11-1.fna&_nc_gid=KT6OIH0L3_WfdOazbkO5Yw&oh=00_AfvpKboQMFRZJJKLTfEftUdOVYb2q0epaNE7y8_5F3BfuQ&oe=6985706B";
+
+
+
 // =====================
 // ✅ ӨНГӨНИЙ ЖАГСААЛТ (БҮХ ЗАГВАРТ НЭГЭН АДИЛ АШИГЛАНА)
 // =====================
@@ -224,7 +229,14 @@ function sendColorCarouselPage(sender, productId, page = 0) {
   const p = PRODUCTS.find((x) => x.id === productId);
   if (!p) return sendText(sender, "Загвар олдсонгүй.");
 
+  if (page === 0 && COLOR_BANNER && COLOR_BANNER.startsWith("http")) {
+    sendImage(sender, COLOR_BANNER);
+  }
+
   const colors = p.colors || ["Стандарт"];
+  ...
+}
+
   const perPage = 10;
 
   const start = page * perPage;
