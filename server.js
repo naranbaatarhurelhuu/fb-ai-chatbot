@@ -124,7 +124,7 @@ function sendMaterial(sender) {
 // =====================
 function sendTemplates(sender) {
   const elements = PRODUCTS.slice(0, 10).map((p) => ({
-    title: `${p.name} – ${format₮(p.price)}`,
+    title: `${p.name} – ${formatMNT(p.price)}`,
     image_url: p.image,
     subtitle: p.desc || " ",
     buttons: [{ type: "postback", title: "✅ Сонгох", payload: `PICK_${p.id}` }],
@@ -167,7 +167,7 @@ function sendColorMenu(sender, productId) {
 
   sendButtons(
     sender,
-    `🎨 Өнгөө сонгоно уу:\n\n${p.name} – ${format₮(p.price)}`,
+    `🎨 Өнгөө сонгоно уу:\n\n${p.name} – ${formatMNT(p.price)}`,
     buttons
   );
 }
@@ -181,7 +181,7 @@ function sendOrderButton(sender, s) {
 
   sendButtons(
     sender,
-    `✅ Сонголт:\n${p.name}\nӨнгө: ${s.color}\nҮнэ: ${format₮(p.price)}\n\nЗахиалгаа үргэлжлүүлэх үү?`,
+    `✅ Сонголт:\n${p.name}\nӨнгө: ${s.color}\nҮнэ: ${formatMNT(p.price)}\n\nЗахиалгаа үргэлжлүүлэх үү?`,
     [
       { title: "🛒 Захиалах", payload: "ORDER_NOW" },
       { title: "🔙 Буцах", payload: "SHOW_TEMPLATES" },
@@ -310,7 +310,7 @@ function handleText(sender, textRaw) {
       "🧾 Захиалгын мэдээлэл\n\n" +
       `• Загвар: ${p.name}\n` +
       `• Өнгө: ${s.color}\n` +
-      `• Үнэ: ${format₮(p.price)}\n\n` +
+      `• Үнэ: ${formatMNT(p.price)}\n\n` +
       `☎️ Утас: ${s.phone}\n` +
       `📦 Хаяг: ${s.address}\n\n` +
       "Зөв бол Баталгаажуулах дээр дарна уу.";
@@ -397,8 +397,8 @@ function sendButtons(sender, text, buttons) {
   );
 }
 
-function format₮(n) {
-  return `${Number(n).toLocaleString("mn-MN")}₮`;
+function formatMNT(n) {
+  return `${Number(n).toLocaleString("mn-MN")}MNT`;
 }
 
 const PORT = process.env.PORT || 3000;
