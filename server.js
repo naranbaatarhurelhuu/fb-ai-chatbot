@@ -229,16 +229,15 @@ function sendColorCarouselPage(sender, productId, page = 0) {
   const p = PRODUCTS.find((x) => x.id === productId);
   if (!p) return sendText(sender, "Загвар олдсонгүй.");
 
-  if (page === 0 && COLOR_BANNER && COLOR_BANNER.startsWith("http")) {
+  // ✅ Зөвхөн эхний хуудсан дээр banner зураг 1 удаа явуулна
+  if (page === 0 && typeof COLOR_BANNER === "string" && COLOR_BANNER.startsWith("http")) {
     sendImage(sender, COLOR_BANNER);
+    // хүсвэл: sendText(sender, "🎨 Өнгөө сонгоорой 👇");
   }
 
-  const colors = p.colors || ["Стандарт"];
-  ...
-}
+  const colors = p.colors && p.colors.length ? p.colors : ["Стандарт"];
 
   const perPage = 10;
-
   const start = page * perPage;
   const chunk = colors.slice(start, start + perPage);
 
@@ -246,16 +245,29 @@ function sendColorCarouselPage(sender, productId, page = 0) {
     title: `🎨 ${c}`,
     subtitle: `${p.name} – ${formatMNT(p.price)}`,
     image_url: (p.colorImages && p.colorImages[c]) ? p.colorImages[c] : p.image,
-    buttons: [{ type: "postback", title: "✅ Энэ өнгө", payload: `COLOR_${productId}_${encodeURIComponent(c)}` }],
+    buttons: [
+      { type: "postback", title: "✅ Энэ өнгө", payload: `COLOR_${productId}_${encodeURIComponent(c)}` }
+    ],
   }));
 
   // Navigation-ийг хамгийн сүүлийн картан дээр хавсаргана (3 button дотор багтаана)
   const navButtons = [];
-  if (page > 0) navButtons.push({ type: "postback", title: "◀ Буцах", payload: `COLOR_CAROUSEL_${productId}_${page - 1}` });
-  if (start + perPage < colors.length)
-    navButtons.push({ type: "postback", title: "▶ Дараагийн", payload: `COLOR_CAROUSEL_${productId}_${page + 1}` });
+  if (page > 0) {
+    navButtons.push({
+      type: "postback",
+      title: "◀ Буцах",
+      payload: `COLOR_CAROUSEL_${productId}_${page - 1}`,
+    });
+  }
+  if (start + perPage < colors.length) {
+    navButtons.push({
+      type: "postback",
+      title: "▶ Дараагийн",
+      payload: `COLOR_CAROUSEL_${productId}_${page + 1}`,
+    });
+  }
 
-  if (navButtons.length) {
+  if (navButtons.length && elements.length) {
     const last = elements[elements.length - 1];
     last.buttons = [...last.buttons, ...navButtons].slice(0, 3);
   }
@@ -263,7 +275,10 @@ function sendColorCarouselPage(sender, productId, page = 0) {
   fbSend(sender, {
     attachment: {
       type: "template",
-      payload: { template_type: "generic", elements },
+      payload: {
+        template_type: "generic",
+        elements,
+      },
     },
   });
 }
